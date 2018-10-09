@@ -38,15 +38,8 @@ public class ShipScript : MonoBehaviour
     public float timer;
     public int timerCount;
 
-
-
     //screen wrapping
-    public Vector3 spawnPosition;
-    public Vector3 shipPos;
-    public Vector3 changePositionY;
-    public Vector3 changePositionX;
-    public Vector3 changePositionNegativeX;
-    public Vector3 changePositionNegativeY;
+    public Vector3 newPosition;
 
     //random spawn
     public float ySpawn;
@@ -59,11 +52,12 @@ public class ShipScript : MonoBehaviour
         //randomiserar skeppets hastighet
         shipSpeed = Random.Range(2f, 8f);
 
-        //randomiserar skeppets x axel spawn
-        xSpawn = Random.Range(-8.35f, 8.35f);
+        //SKA randomiserar skeppets x axel spawn
+        Vector3 randomSpawn;
+            xSpawn = Random.Range(-8.35f, 8.35f);
 
-        //randomiserar skeppets y axel spawn
-        ySpawn = Random.Range(-4.5f, 4.5f);
+        //SKA randomiserar skeppets y axel spawn
+            ySpawn = Random.Range(-4.5f, 4.5f);
     }
 
     // Update is called once per frame
@@ -125,27 +119,20 @@ public class ShipScript : MonoBehaviour
         }
 
 
-        //ej klart
-        if (shipPos.y >= 5.35f)
+        //screen wrapping (verkar inte fungera)
+        Vector3 newPosition = transform.position;
+
+        if (newPosition.x > 5.5f || newPosition.x < -5.5f)
         {
-            changePositionNegativeY.y = -5.35f;
+            newPosition.x -= newPosition.x;
         }
 
-        if (shipPos.y >= -5.35f)
+        if (newPosition.y > 9.5f || newPosition.y < -9.5f)
         {
-            changePositionY.y = 5.35f;
+            newPosition.y -= newPosition.y;
         }
 
-        if (shipPos.x >= 9.25f)
-        {
-
-        }
-
-        if (shipPos.x >= -9.25f)
-        {
-
-        }
-
+        transform.position = newPosition;
 
 
 
