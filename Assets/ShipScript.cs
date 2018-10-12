@@ -125,9 +125,10 @@ public class ShipScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) // Om "Space" trycks ned så händer det som står inom måsvingarna nedan
         {
 
-            red = Random.Range(0f, 1f); // Randomiserar värdet på röd färg
-            green = Random.Range(0f, 1f); // Randomiserar värdet på grön färg
-            blue = Random.Range(0f, 1f); // Randomiserar värdet på blå färg
+            red = Random.Range(0.2f, 1f); // Randomiserar värdet på röd färg
+            green = Random.Range(0.2f, 1f); // Randomiserar värdet på grön färg
+            blue = Random.Range(0.2f, 1f); // Randomiserar värdet på blå färg
+                               //^värdet är 0.2 eftersom jag inte vill att den ska blenda in i bakgrunden helt
 
             randomColor = new Color(red, green, blue); // Skapar en ny färg med de randomiserade RGB färgerna
             shipRend.color = randomColor; // Renderar den nya färgen på skeppet

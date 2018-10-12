@@ -309,6 +309,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114350379939879648, guid: 9c1b515f630978741b8a1ee7ce75c8b3,
+        type: 2}
+      propertyPath: randomColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1b515f630978741b8a1ee7ce75c8b3, type: 2}
   m_IsPrefabAsset: 0
